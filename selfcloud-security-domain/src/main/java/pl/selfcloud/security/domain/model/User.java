@@ -22,7 +22,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import pl.selfcloud.common.model.customer.dto.CustomerDto;
+import pl.selfcloud.customer.api.dto.CustomerDto;
 import pl.selfcloud.security.api.state.RejectionReason;
 import pl.selfcloud.security.api.state.UserState;
 import pl.selfcloud.security.domain.model.privilege.Role;

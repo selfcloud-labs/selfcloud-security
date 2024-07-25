@@ -4,11 +4,11 @@
   <parent>
     <groupId>pl.selfcloud.security</groupId>
     <artifactId>selfcloud-security</artifactId>
-    <version>1.0.4</version>
+      <version>1.0.5</version>
   </parent>
   <groupId>pl.selfcloud.security</groupId>
   <artifactId>selfcloud-security-web</artifactId>
-  <version>1.0.4</version>
+  <version>1.0.5</version>
   <packaging>jar</packaging>
 
   <name>selfcloud-security-web</name>
@@ -21,12 +21,12 @@
     <dependency>
       <groupId>pl.selfcloud.security</groupId>
       <artifactId>selfcloud-security-domain</artifactId>
-      <version>1.0.4</version>
+          <version>1.0.5</version>
     </dependency>
     <dependency>
       <groupId>pl.selfcloud.security</groupId>
       <artifactId>selfcloud-security-api</artifactId>
-      <version>1.0.4</version>
+          <version>1.0.5</version>
     </dependency>
   </dependencies>
 

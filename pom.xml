@@ -9,13 +9,23 @@
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
 
+
+  <properties>
+    <revision>1.0.5</revision>
+  </properties>
+
   <groupId>pl.selfcloud.security</groupId>
   <artifactId>selfcloud-security</artifactId>
-  <version>1.0.4</version>
+  <version>1.0.5</version>
   <name>selfcloud-security</name>
   <description>selfcloud-security-backend</description>
   <packaging>pom</packaging>
   <dependencies>
+    <dependency>
+      <groupId>pl.selfcloud.customer</groupId>
+      <artifactId>selfcloud-customer-api</artifactId>
+      <version>1.0.5</version>
+    </dependency>
     <dependency>
       <groupId>pl.selfcloud</groupId>
       <artifactId>selfcloud-common</artifactId>

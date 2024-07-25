@@ -4,8 +4,8 @@ import io.eventuate.tram.sagas.simpledsl.CommandEndpoint;
 import io.eventuate.tram.sagas.simpledsl.CommandEndpointBuilder;
 import pl.selfcloud.common.reply.CustomerCreatedReply;
 import pl.selfcloud.common.reply.CustomerDeletedReply;
-import pl.selfcloud.security.api.saga.command.CreateCustomerCommand;
-import pl.selfcloud.security.api.saga.command.DeleteCustomerCommand;
+import pl.selfcloud.customer.api.saga.command.CreateCustomerCommand;
+import pl.selfcloud.customer.api.saga.command.DeleteCustomerCommand;
 
 public class CustomerServiceProxy {
   public CommandEndpoint<CreateCustomerCommand> createCustomer = CommandEndpointBuilder

@@ -2,11 +2,11 @@ package pl.selfcloud.security.saga.user.create;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import pl.selfcloud.common.model.dto.RegistrationDto;
 import pl.selfcloud.common.reply.CustomerCreatedReply;
+import pl.selfcloud.customer.api.saga.command.CreateCustomerCommand;
+import pl.selfcloud.customer.api.saga.command.DeleteCustomerCommand;
+import pl.selfcloud.security.api.dto.RegistrationDto;
 import pl.selfcloud.security.api.saga.command.ApproveUserCommand;
-import pl.selfcloud.security.api.saga.command.CreateCustomerCommand;
-import pl.selfcloud.security.api.saga.command.DeleteCustomerCommand;
 import pl.selfcloud.security.api.saga.command.RejectUserCommand;
 import pl.selfcloud.security.api.state.RejectionReason;
 import pl.selfcloud.security.api.state.UserState;
@@ -32,7 +32,7 @@ public class CreateUserSagaState {
   }
 
   CreateCustomerCommand makeCreateCustomerCommand(){
-    return new CreateCustomerCommand(getUserId(), getRegistrationDto());
+    return new CreateCustomerCommand(getUserId(), getRegistrationDto().getCustomerDto());
   }
 
   void handleCreateCustomerCommand(CustomerCreatedReply reply){
