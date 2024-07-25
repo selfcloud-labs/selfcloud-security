@@ -1,6 +1,7 @@
 package pl.selfcloud.security.domain.service;
 
 
+import io.eventuate.tram.sagas.orchestration.SagaManager;
 import jakarta.mail.internet.AddressException;
 import jakarta.mail.internet.InternetAddress;
 import java.util.Optional;
@@ -26,6 +27,8 @@ import pl.selfcloud.security.domain.repository.RoleRepository;
 import pl.selfcloud.security.domain.repository.UserRepository;
 import pl.selfcloud.security.domain.service.exception.AccountWithThisEmailExistsException;
 import pl.selfcloud.security.domain.service.exception.InvalidEmailFormatException;
+import pl.selfcloud.security.domain.service.publisher.UserDomainEventPublisher;
+import pl.selfcloud.security.saga.user.create.CreateUserSagaState;
 
 
 @Service
@@ -34,8 +37,8 @@ public class UserService {
   private final UserRepository userRepository;
   private final PasswordEncoder passwordEncoder;
   private final AuthenticationManager authenticationManager;
-//  private final UserDomainEventPublisher userDomainEventPublisher;
-//  private final SagaManager<CreateUserSagaState> sagaManager;
+  private final UserDomainEventPublisher userDomainEventPublisher;
+  private final SagaManager<CreateUserSagaState> sagaManager;
 
   private final JwtUtil jwtUtil;
   private final Role userRole;
@@ -44,19 +47,19 @@ public class UserService {
   @Autowired
   public UserService(UserRepository userRepository, RoleRepository roleRepository,
       PasswordEncoder passwordEncoder, AuthenticationManager authenticationManager,
-//      UserDomainEventPublisher userDomainEventPublisher,
-//      SagaManager<CreateUserSagaState> sagaManager,
+      UserDomainEventPublisher userDomainEventPublisher,
+      SagaManager<CreateUserSagaState> sagaManager,
       JwtUtil jwtUtil
 //      CreateUserSagaCompletionListener sagaCompletionListener
   ) {
     this.userRepository = userRepository;
     this.passwordEncoder = passwordEncoder;
     this.authenticationManager = authenticationManager;
-//    this.sagaManager = sagaManager;
+    this.sagaManager = sagaManager;
     this.jwtUtil = jwtUtil;
 //    this.sagaCompletionListener = sagaCompletionListener;
     this.userRole = roleRepository.findByName(RoleName.ROLE_USER).get();
-//    this.userDomainEventPublisher = userDomainEventPublisher;
+    this.userDomainEventPublisher = userDomainEventPublisher;
   }
 
 
@@ -86,9 +89,9 @@ public class UserService {
     User createdUser = userRepository.save(user);
     System.out.println("User created: " + createdUser.getId());
 
-//    CreateUserSagaState data = new CreateUserSagaState(createdUser.getId(), registrationDto);
+    CreateUserSagaState data = new CreateUserSagaState(createdUser.getId(), registrationDto);
 
-//    sagaManager.create(data, RegistrationDto.class, createdUser.getId());
+    sagaManager.create(data, RegistrationDto.class, createdUser.getId());
     System.out.println("Saga created");
 
     User updatedUser = userRepository.findById(createdUser.getId()).orElseThrow(() -> new UsernameNotFoundException("User not found"));
