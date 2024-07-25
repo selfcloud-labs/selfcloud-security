@@ -1,0 +1,98 @@
+server:
+  port: 8090
+logging:
+  level:
+    org.springframework.security: debug
+    org.springframework.orm.jpa: INFO
+    org.hibernate.SQL: DEBUG
+    io.eventuate: DEBUG
+    io.eventuate.tram: DEBUG
+
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: k4953826@gmail.com
+    password: clwtsaiyqvxkgzep
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls.enable: true
+  h2:
+    console:
+      enabled: true
+  application:
+    name: selfcloud-security
+  datasource:
+    username: security
+    password: security
+    url: jdbc:mysql://localhost:3306/security
+#    url: jdbc:h2:mem:eventuate;DB_CLOSE_DELAY=-1
+#    driver-class-name: org.h2.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    defer-datasource-initialization: false
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    database-platform: org.hibernate.dialect.MySQLDialect
+  servlet:
+    multipart:
+      file-size-threshold: 2KB
+      max-file-size: 200MB
+      max-request-size: 215MB
+  flyway:
+#    baselineOnMigrate: true
+    enabled: true
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${GOOGLE_CLIENT_ID}
+            client-secret: ${GOOGLE_CLIENT_SECRET}
+            redirectUri: "{baseUrl}/login/oauth2/code/google"
+            authorizationUri: "https://accounts.google.com/o/oauth2/v2/auth"
+            tokenUri: "https://www.googleapis.com/oauth2/v4/token"
+            userInfoUri: "https://www.googleapis.com/oauth2/v3/userinfo"
+            jwkSetUri: "https://www.googleapis.com/oauth2/v3/certs"
+            clientName: "Google"
+            scope:
+              - email
+              - profile
+              - email
+              - address
+              - phone
+        provider:
+          google:
+            user-name-attribute: email
+become-investor-destination: k4953826@gmail.com
+security:
+  jwt:
+    secret-key: 3cfa76ef14937c1c0ea519f8fc057a80fcd04a7420f8e8bcd0a7567c272e007b
+    expiration-time: 3600000
+springdoc:
+  show-login-endpoint: true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka}
+  instance:
+    prefer-ip-address: 'true'
+eventuatelocal:
+  kafka:
+    bootstrap:
+      servers: localhost:9092
+  zookeeper:
+    connection:
+      string: localhost:2181
+
+eventuate:
+  transactional:
+    messaging:
+      kafka:
+        replication: 1

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>pl.selfcloud</groupId>
+    <artifactId>selfcloud-parent</artifactId>
+    <version>1.0.6</version>
+    <relativePath/> <!-- lookup parent from repository -->
+  </parent>
+
+  <groupId>pl.selfcloud.security</groupId>
+  <artifactId>selfcloud-security</artifactId>
+  <version>1.0.3</version>
+  <name>selfcloud-security</name>
+  <description>selfcloud-security-backend</description>
+  <packaging>pom</packaging>
+  <dependencies>
+    <dependency>
+      <groupId>pl.selfcloud</groupId>
+      <artifactId>selfcloud-common</artifactId>
+      <version>1.0.14</version>
+    </dependency>
+    <dependency>
+      <groupId>pl.selfcloud</groupId>
+      <artifactId>selfcloud-common-security</artifactId>
+      <version>1.0.7</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+      <version>4.1.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-mail</artifactId>
+      <version>3.2.1</version>
+    </dependency>
+  </dependencies>
+  <modules>
+    <module>selfcloud-security-application</module>
+    <module>selfcloud-security-api</module>
+    <module>selfcloud-security-web</module>
+    <module>selfcloud-security-domain</module>
+    <module>selfcloud-security-infrastructure</module>
+    <module>selfcloud-security-saga</module>
+  </modules>
+</project>

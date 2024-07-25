@@ -1,0 +1,46 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>pl.selfcloud.security</groupId>
+    <artifactId>selfcloud-security</artifactId>
+    <version>1.0.3</version>
+  </parent>
+  <groupId>pl.selfcloud.security</groupId>
+  <artifactId>selfcloud-security-application</artifactId>
+  <version>1.0.3</version>
+  <packaging>jar</packaging>
+
+  <name>selfcloud-security-application</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>pl.selfcloud.security</groupId>
+      <artifactId>selfcloud-security-domain</artifactId>
+      <version>1.0.3</version>
+    </dependency>
+    <dependency>
+      <groupId>pl.selfcloud.security</groupId>
+      <artifactId>selfcloud-security-infrastructure</artifactId>
+      <version>1.0.3</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>pl.selfcloud.security</groupId>
+      <artifactId>selfcloud-security-web</artifactId>
+      <version>1.0.3</version>
+    </dependency>
+    <dependency>
+      <groupId>pl.selfcloud.security</groupId>
+      <artifactId>selfcloud-security-api</artifactId>
+      <version>1.0.3</version>
+    </dependency>
+  </dependencies>
+</project>
