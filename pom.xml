@@ -9,33 +9,26 @@
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
 
-
-  <properties>
-    <revision>1.0.5</revision>
-  </properties>
-
   <groupId>pl.selfcloud.security</groupId>
   <artifactId>selfcloud-security</artifactId>
   <version>1.0.5</version>
+
   <name>selfcloud-security</name>
   <description>selfcloud-security-backend</description>
   <packaging>pom</packaging>
+
+  <modules>
+    <module>selfcloud-security-application</module>
+    <module>selfcloud-security-api</module>
+    <module>selfcloud-security-web</module>
+    <module>selfcloud-security-domain</module>
+    <module>selfcloud-security-infrastructure</module>
+    <module>selfcloud-security-saga</module>
+  </modules>
+
   <dependencies>
-    <dependency>
-      <groupId>pl.selfcloud.customer</groupId>
-      <artifactId>selfcloud-customer-api</artifactId>
-      <version>1.0.5</version>
-    </dependency>
-    <dependency>
-      <groupId>pl.selfcloud</groupId>
-      <artifactId>selfcloud-common</artifactId>
-      <version>1.0.14</version>
-    </dependency>
-    <dependency>
-      <groupId>pl.selfcloud</groupId>
-      <artifactId>selfcloud-common-security</artifactId>
-      <version>1.0.7</version>
-    </dependency>
+
+
     <dependency>
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
@@ -46,70 +39,58 @@
       <artifactId>spring-boot-starter-mail</artifactId>
       <version>3.2.1</version>
     </dependency>
-    <dependency>
-      <groupId>io.eventuate.tram.sagas</groupId>
-      <artifactId>eventuate-tram-sagas-spring-orchestration-simple-dsl-starter</artifactId>
-      <version>0.23.0.RELEASE</version>
-    </dependency>
-    <dependency>
-      <groupId>io.eventuate.tram.core</groupId>
-      <artifactId>eventuate-tram-spring-messaging</artifactId>
-      <version>0.34.0.RELEASE</version>
-    </dependency>
-    <dependency>
-      <groupId>io.eventuate.tram.core</groupId>
-      <artifactId>eventuate-tram-spring-events</artifactId>
-      <version>0.34.0.RELEASE</version>
-    </dependency>
-    <dependency>
-      <groupId>io.eventuate.tram.core</groupId>
-      <artifactId>eventuate-tram-spring-commands</artifactId>
-      <version>0.34.0.RELEASE</version>
-    </dependency>
-    <dependency>
-      <groupId>io.eventuate.tram.core</groupId>
-      <artifactId>eventuate-tram-spring-jdbc-kafka</artifactId>
-      <version>0.34.0.RELEASE</version>
-    </dependency>
-    <dependency>
-      <groupId>io.eventuate.tram.core</groupId>
-      <artifactId>eventuate-tram-spring-optimistic-locking</artifactId>
-      <version>0.34.0.RELEASE</version>
-    </dependency>
-    <dependency>
-      <groupId>io.eventuate.tram.sagas</groupId>
-      <artifactId>eventuate-tram-sagas-spring-participant-starter</artifactId>
-      <version>0.23.0.RELEASE</version>
-    </dependency>
-    <dependency>
-      <groupId>io.eventuate.tram.sagas</groupId>
-      <artifactId>eventuate-tram-sagas-spring-flyway</artifactId>
-      <version>0.23.0.RELEASE</version>
-    </dependency>
-    <dependency>
-      <groupId>io.eventuate.tram.core</groupId>
-      <artifactId>eventuate-tram-aggregate-domain-events</artifactId>
-      <version>0.34.0.RELEASE</version>
-    </dependency>
-
-    <dependency>
-      <groupId>io.eventuate.tram.sagas</groupId>
-      <artifactId>eventuate-tram-sagas-participant</artifactId>
-      <version>0.23.0.RELEASE</version>
-    </dependency>
-    <dependency>
-      <groupId>io.eventuate.tram.core</groupId>
-      <artifactId>eventuate-tram-spring-flyway</artifactId>
-      <version>0.34.0.RELEASE</version>
-    </dependency>
-
   </dependencies>
-  <modules>
-    <module>selfcloud-security-application</module>
-    <module>selfcloud-security-api</module>
-    <module>selfcloud-security-web</module>
-    <module>selfcloud-security-domain</module>
-    <module>selfcloud-security-infrastructure</module>
-    <module>selfcloud-security-saga</module>
-  </modules>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>pl.selfcloud.customer</groupId>
+        <artifactId>selfcloud-customer-api</artifactId>
+        <version>1.0.5</version>
+      </dependency>
+      <dependency>
+        <groupId>pl.selfcloud.common.eventuate.saga</groupId>
+        <artifactId>selfcloud-common-eventuate-saga</artifactId>
+        <version>1.0.2</version>
+      </dependency>
+      <dependency>
+        <groupId>pl.selfcloud.common.eventuate.event</groupId>
+        <artifactId>selfcloud-common-eventuate-event</artifactId>
+        <version>1.0.2</version>
+      </dependency>
+      <dependency>
+        <groupId>pl.selfcloud.common.library</groupId>
+        <artifactId>selfcloud-common-library</artifactId>
+        <version>1.0.2</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-security</artifactId>
+        <version>3.2.4</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-oauth2-client</artifactId>
+        <version>3.2.4</version>
+      </dependency>
+      <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-api</artifactId>
+        <version>0.11.5</version>
+      </dependency>
+      <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-impl</artifactId>
+        <version>0.11.5</version>
+        <scope>runtime</scope>
+      </dependency>
+      <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-jackson</artifactId>
+        <version>0.11.5</version>
+        <scope>runtime</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
 </project>

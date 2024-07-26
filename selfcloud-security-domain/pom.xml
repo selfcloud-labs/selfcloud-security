@@ -29,6 +29,13 @@
       <artifactId>selfcloud-security-saga</artifactId>
       <version>1.0.5</version>
     </dependency>
-
+    <dependency>
+      <groupId>pl.selfcloud.common.eventuate.event</groupId>
+      <artifactId>selfcloud-common-eventuate-event</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-security</artifactId>
+    </dependency>
   </dependencies>
 </project>

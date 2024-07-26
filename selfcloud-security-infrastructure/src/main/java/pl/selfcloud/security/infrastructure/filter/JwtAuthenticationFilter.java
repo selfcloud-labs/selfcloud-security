@@ -20,8 +20,9 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.stereotype.Component;
-import pl.selfcloud.common.security.util.JwtUtil;
+
 import pl.selfcloud.security.api.dto.LoginUserDto;
+import pl.selfcloud.security.api.util.JwtUtil;
 import pl.selfcloud.security.api.util.Utilities;
 import pl.selfcloud.security.domain.model.TokenEntity;
 import pl.selfcloud.security.domain.model.User;

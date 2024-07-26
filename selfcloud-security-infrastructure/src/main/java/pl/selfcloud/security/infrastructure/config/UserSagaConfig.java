@@ -17,7 +17,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import pl.selfcloud.common.security.util.JwtUtil;
+
+import pl.selfcloud.security.api.util.JwtUtil;
 import pl.selfcloud.security.domain.repository.RoleRepository;
 import pl.selfcloud.security.domain.repository.UserRepository;
 import pl.selfcloud.security.domain.service.UserService;

@@ -21,7 +21,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
-import pl.selfcloud.common.security.util.JwtUtil;
+import pl.selfcloud.security.api.util.JwtUtil;
 import pl.selfcloud.security.domain.service.TokenService;
 import pl.selfcloud.security.domain.service.handler.OAuth2LoginSuccessHandler;
 import pl.selfcloud.security.infrastructure.filter.JwtAuthenticationFilter;

@@ -9,7 +9,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.core.user.DefaultOAuth2User;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
-import pl.selfcloud.common.security.util.JwtUtil;
+import pl.selfcloud.security.api.util.JwtUtil;
+
 
 @Component
 public class OAuth2LoginSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {

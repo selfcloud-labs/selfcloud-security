@@ -10,8 +10,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import pl.selfcloud.common.security.util.JwtUtil;
 import pl.selfcloud.security.api.response.ConnValidationResponse;
+import pl.selfcloud.security.api.util.JwtUtil;
 import pl.selfcloud.security.domain.service.UserService;
 
 @RestController

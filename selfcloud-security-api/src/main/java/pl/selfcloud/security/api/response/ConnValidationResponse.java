@@ -6,7 +6,6 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;
 import org.springframework.security.core.GrantedAuthority;
-//import pl.selfcloud.security.models.privileges
 
 @Getter
 @Builder

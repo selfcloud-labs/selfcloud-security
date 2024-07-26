@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import pl.selfcloud.common.security.util.JwtUtil;
 import pl.selfcloud.security.api.dto.CreatedUserDto;
 import pl.selfcloud.security.api.dto.RegistrationDto;
+import pl.selfcloud.security.api.util.JwtUtil;
 import pl.selfcloud.security.domain.service.UserService;
 import pl.selfcloud.security.domain.service.exception.AccountWithThisEmailExistsException;
 

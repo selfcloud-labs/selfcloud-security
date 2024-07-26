@@ -2,9 +2,9 @@ package pl.selfcloud.security.saga.user.create;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import pl.selfcloud.common.reply.CustomerCreatedReply;
 import pl.selfcloud.customer.api.saga.command.CreateCustomerCommand;
 import pl.selfcloud.customer.api.saga.command.DeleteCustomerCommand;
+import pl.selfcloud.customer.api.saga.reply.CustomerCreatedReply;
 import pl.selfcloud.security.api.dto.RegistrationDto;
 import pl.selfcloud.security.api.saga.command.ApproveUserCommand;
 import pl.selfcloud.security.api.saga.command.RejectUserCommand;

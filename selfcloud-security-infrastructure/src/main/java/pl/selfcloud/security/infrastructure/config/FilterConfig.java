@@ -4,7 +4,8 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import pl.selfcloud.common.security.util.JwtUtil;
+
+import pl.selfcloud.security.api.util.JwtUtil;
 import pl.selfcloud.security.domain.service.TokenService;
 import pl.selfcloud.security.infrastructure.filter.JwtAuthorizationFilter;
 

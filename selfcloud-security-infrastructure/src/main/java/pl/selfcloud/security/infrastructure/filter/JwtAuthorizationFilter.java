@@ -17,7 +17,8 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
-import pl.selfcloud.common.security.util.JwtUtil;
+
+import pl.selfcloud.security.api.util.JwtUtil;
 import pl.selfcloud.security.api.util.SecurityConstants;
 import pl.selfcloud.security.api.util.Utilities;
 import pl.selfcloud.security.domain.model.TokenEntity;

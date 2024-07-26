@@ -21,17 +21,17 @@
     <dependency>
       <groupId>pl.selfcloud.security</groupId>
       <artifactId>selfcloud-security-api</artifactId>
-          <version>1.0.5</version>
+      <version>1.0.5</version>
     </dependency>
     <dependency>
       <groupId>pl.selfcloud.security</groupId>
       <artifactId>selfcloud-security-domain</artifactId>
-          <version>1.0.5</version>
+      <version>1.0.5</version>
     </dependency>
     <dependency>
       <groupId>pl.selfcloud.security</groupId>
       <artifactId>selfcloud-security-saga</artifactId>
-          <version>1.0.5</version>
+      <version>1.0.5</version>
     </dependency>
   </dependencies>
 </project>
