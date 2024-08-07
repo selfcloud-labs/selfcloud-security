@@ -7,8 +7,9 @@ logging:
     org.hibernate.SQL: DEBUG
     io.eventuate: DEBUG
     io.eventuate.tram: DEBUG
-
 spring:
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:default}
   mail:
     host: smtp.gmail.com
     port: 587
@@ -25,11 +26,9 @@ spring:
   application:
     name: selfcloud-security
   datasource:
-    username: security
-    password: security
-    url: jdbc:mysql://localhost:3306/security
-#    url: jdbc:h2:mem:eventuate;DB_CLOSE_DELAY=-1
-#    driver-class-name: org.h2.Driver
+    username: ${SECURITY_DB_USERNAME:security}
+    password: ${SECURITY_DB_USERNAME:security}
+    url: jdbc:mysql://${SECURITY_HOST_IP:localhost}:3306/security
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     defer-datasource-initialization: false
@@ -46,7 +45,6 @@ spring:
       max-file-size: 200MB
       max-request-size: 215MB
   flyway:
-#    baselineOnMigrate: true
     enabled: true
   security:
     oauth2:
@@ -73,23 +71,25 @@ spring:
 become-investor-destination: k4953826@gmail.com
 security:
   jwt:
-    secret-key: 3cfa76ef14937c1c0ea519f8fc057a80fcd04a7420f8e8bcd0a7567c272e007b
+    #TODO
+    secret-key: ${JWT_SECURITY_KEY:3cfa76ef14937c1c0ea519f8fc057a80fcd04a7420f8e8bcd0a7567c272e007b}
     expiration-time: 3600000
 springdoc:
   show-login-endpoint: true
 eureka:
   client:
+    enabled: ${EUREKA_CLIENT_ENABLED:false}
     serviceUrl:
-      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka}
+      defaultZone:  http://${EUREKA_HOST:localhost}:8761/eureka
   instance:
     prefer-ip-address: 'true'
 eventuatelocal:
   kafka:
     bootstrap:
-      servers: localhost:9092
+      servers: ${KAFKA_HOST:localhost}:9092
   zookeeper:
     connection:
-      string: localhost:2181
+      string: ${ZOOKEEPER_HOST:localhost}:2181
 
 eventuate:
   transactional:

@@ -29,10 +29,6 @@
       <version>1.0.5</version>
     </dependency>
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
-    <dependency>
       <groupId>pl.selfcloud.security</groupId>
       <artifactId>selfcloud-security-web</artifactId>
           <version>1.0.5</version>
@@ -42,5 +38,30 @@
       <artifactId>selfcloud-security-api</artifactId>
           <version>1.0.5</version>
     </dependency>
+    <dependency>
+      <groupId>pl.selfcloud.security</groupId>
+      <artifactId>selfcloud-security-saga</artifactId>
+      <version>1.0.5</version>
+    </dependency>
   </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>pl.selfcloud.security.application.SelfcloudSecurityApplication</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
+
