@@ -10,4 +10,7 @@ import pl.selfcloud.security.domain.model.TokenEntity;
 public interface TokenRepository extends JpaRepository<TokenEntity, String> {
 
   Optional<TokenEntity> findById(String id);
+  boolean existsByEmail(String email);
+
+
 }

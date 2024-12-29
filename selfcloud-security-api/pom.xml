@@ -1,49 +1,46 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+
   <parent>
     <groupId>pl.selfcloud.security</groupId>
     <artifactId>selfcloud-security</artifactId>
-    <version>1.0.5</version>
+    <version>1.0.6</version>
   </parent>
-  <groupId>pl.selfcloud.security</groupId>
+
+  <groupId>pl.selfcloud.security.api</groupId>
   <artifactId>selfcloud-security-api</artifactId>
-  <version>1.0.5</version>
+
   <packaging>jar</packaging>
-
   <name>selfcloud-security-api</name>
-
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
 
   <dependencies>
 
     <dependency>
+      <groupId>pl.selfcloud.customer.api</groupId>
+      <artifactId>selfcloud-customer-api</artifactId>
+      <version>1.0.7</version>
+    </dependency>
+    <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-oauth2-client</artifactId>
     </dependency>
-    <dependency>
-      <groupId>pl.selfcloud.customer</groupId>
-      <artifactId>selfcloud-customer-api</artifactId>
-      <version>1.0.5</version>
-    </dependency>
+
     <dependency>
       <groupId>io.jsonwebtoken</groupId>
       <artifactId>jjwt-api</artifactId>
-      <version>0.11.5</version>
     </dependency>
     <dependency>
       <groupId>io.jsonwebtoken</groupId>
       <artifactId>jjwt-impl</artifactId>
-      <version>0.11.5</version>
-      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>io.jsonwebtoken</groupId>
       <artifactId>jjwt-jackson</artifactId>
-      <version>0.11.5</version>
-      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>pl.selfcloud.common.eventuate.event</groupId>
+      <artifactId>selfcloud-common-eventuate-event</artifactId>
     </dependency>
   </dependencies>
 

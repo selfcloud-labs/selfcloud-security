@@ -4,11 +4,11 @@
   <parent>
     <groupId>pl.selfcloud.security</groupId>
     <artifactId>selfcloud-security</artifactId>
-    <version>1.0.5</version>
+    <version>1.0.6</version>
   </parent>
 
+  <groupId>pl.selfcloud.security.application</groupId>
   <artifactId>selfcloud-security-application</artifactId>
-  <version>1.0.5</version>
   <packaging>jar</packaging>
 
   <name>selfcloud-security-application</name>
@@ -19,29 +19,24 @@
 
   <dependencies>
     <dependency>
-      <groupId>pl.selfcloud.security</groupId>
+      <groupId>pl.selfcloud.security.domain</groupId>
       <artifactId>selfcloud-security-domain</artifactId>
-      <version>1.0.5</version>
     </dependency>
     <dependency>
-      <groupId>pl.selfcloud.security</groupId>
+      <groupId>pl.selfcloud.security.infrastructure</groupId>
       <artifactId>selfcloud-security-infrastructure</artifactId>
-      <version>1.0.5</version>
     </dependency>
     <dependency>
-      <groupId>pl.selfcloud.security</groupId>
+      <groupId>pl.selfcloud.security.web</groupId>
       <artifactId>selfcloud-security-web</artifactId>
-          <version>1.0.5</version>
     </dependency>
     <dependency>
-      <groupId>pl.selfcloud.security</groupId>
+      <groupId>pl.selfcloud.security.api</groupId>
       <artifactId>selfcloud-security-api</artifactId>
-          <version>1.0.5</version>
     </dependency>
     <dependency>
-      <groupId>pl.selfcloud.security</groupId>
+      <groupId>pl.selfcloud.security.saga</groupId>
       <artifactId>selfcloud-security-saga</artifactId>
-      <version>1.0.5</version>
     </dependency>
   </dependencies>
   <build>

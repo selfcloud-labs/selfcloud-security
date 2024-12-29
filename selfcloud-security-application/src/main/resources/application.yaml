@@ -69,11 +69,12 @@ spring:
           google:
             user-name-attribute: email
 become-investor-destination: k4953826@gmail.com
-security:
+
+selfcloud-security:
   jwt:
     #TODO
     secret-key: ${JWT_SECURITY_KEY:3cfa76ef14937c1c0ea519f8fc057a80fcd04a7420f8e8bcd0a7567c272e007b}
-    expiration-time: 3600000
+    expiration-time: 3600000000
 springdoc:
   show-login-endpoint: true
 eureka:

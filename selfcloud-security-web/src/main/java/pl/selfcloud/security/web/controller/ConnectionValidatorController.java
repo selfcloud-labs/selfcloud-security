@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pl.selfcloud.security.api.response.ConnValidationResponse;
+
+
+import pl.selfcloud.security.api.response.TransferGrantedAuthority;
 import pl.selfcloud.security.api.util.JwtUtil;
 import pl.selfcloud.security.domain.service.UserService;
 
@@ -33,7 +36,11 @@ public class ConnectionValidatorController {
 
     String token = request.getHeader("authorization");
     String username = (String) request.getAttribute("username");
-    List<GrantedAuthority> grantedAuthorities = (List<GrantedAuthority>) request.getAttribute("authorities");
+    List<TransferGrantedAuthority> grantedAuthorities = (List<TransferGrantedAuthority>) request.getAttribute("authorities");
+//    List<TransferGrantedAuthority> transferGrantedAuthorities = grantedAuthorities.stream()
+//        .map(TransferGrantedAuthority::new)
+//        .toList();
+
     Long userId = (Long) request.getAttribute("userId");
 
     return ResponseEntity.ok(ConnValidationResponse.builder()

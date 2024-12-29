@@ -12,7 +12,6 @@ public class HomeController {
 
   @GetMapping("/home")
   public String getHome(){
-//    messageProducer.sendMessage("my-topic", "dupa");
     return "Hello world!";
   }
 

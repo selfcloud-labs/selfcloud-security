@@ -4,7 +4,6 @@ import io.eventuate.tram.sagas.orchestration.SagaDefinition;
 import io.eventuate.tram.sagas.simpledsl.SimpleSaga;
 import java.util.Collections;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import pl.selfcloud.customer.api.saga.reply.CustomerCreatedReply;
 import pl.selfcloud.security.api.event.CreateUSerSagaCompletedSuccessfullyEvent;
 import pl.selfcloud.security.api.event.CreateUserSagaRolledBack;

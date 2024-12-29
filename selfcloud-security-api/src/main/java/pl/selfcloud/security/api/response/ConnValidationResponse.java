@@ -5,7 +5,6 @@ import java.util.Collection;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;
-import org.springframework.security.core.GrantedAuthority;
 
 @Getter
 @Builder
@@ -17,5 +16,5 @@ public class ConnValidationResponse implements Serializable {
   private String username;
   private String token;
   private Long userId;
-  private Collection<GrantedAuthority> authorities;
+  private Collection<TransferGrantedAuthority> authorities;
 }

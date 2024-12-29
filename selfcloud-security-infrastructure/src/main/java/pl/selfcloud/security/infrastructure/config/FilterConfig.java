@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
+import org.springframework.security.core.userdetails.UserDetailsService;
 import pl.selfcloud.security.api.util.JwtUtil;
 import pl.selfcloud.security.domain.service.TokenService;
 import pl.selfcloud.security.infrastructure.filter.JwtAuthorizationFilter;
@@ -17,8 +17,10 @@ public class FilterConfig {
   private final TokenService tokenService;
   @Autowired
   private final JwtUtil jwtUtil;
+  @Autowired
+  private final UserDetailsService userDetailsService;
   @Bean
   public JwtAuthorizationFilter jwtAuthorizationFilter(){
-    return new JwtAuthorizationFilter(tokenService, jwtUtil);
+    return new JwtAuthorizationFilter(tokenService, userDetailsService, jwtUtil);
   }
 }
